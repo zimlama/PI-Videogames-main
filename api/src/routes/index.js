@@ -8,7 +8,7 @@ const router = Router();
 // *Esta es la version cuando solo mostramos todos los videojuegos (en el nuevo codigo permiter search name y mostras todos los videojuegos)
 const { get01videogameslist } = require('../controllers/get01videogameslist');
 const { get02videogamedetail } = require('../controllers/get02videogamedetail');
-const { get03APIlistsearch } = require('../controllers/get03APIvideogameslistsearch');
+//const { get03APIlistsearch } = require('../controllers/get03APIvideogameslistsearch');
 const { get04genrelist } = require('../controllers/get04genrelist');
 const { Genre, Videogame } = require("../db.js");
 // Configurar los routers
@@ -28,7 +28,7 @@ router.get("/videogames", async (req, res) => {
         //const listsearch = await get03APIlistsearch(name);
         const listsearch = await get01videogameslist(name);
         if(listsearch.length){
-            return res.status(200).json(listsearch);
+            return res.status(200).json(listsearch.slice(0,14));
         }
         return res.status(404).send("No se encuentra el videojuego requerido");
     } catch (err){
