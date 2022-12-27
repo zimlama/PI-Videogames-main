@@ -10,7 +10,6 @@ const get03DBlistsearch = async (name) => {
     if(name){
         newName = name.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "").replace(/' '/g, "-").toLowerCase();
         const videogameMatchName = await videogameslist.filter((el) => el.slug.includes(newName));
-        //console.log('esto es videogameMatchName: ', videogameMatchName);
         return videogameMatchName;
     } else {
         return videogameslist;

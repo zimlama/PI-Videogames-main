@@ -25,7 +25,6 @@ router.get("/videogames", async (req, res) => {
     // }
     try{
         const name = req.query.name;
-        console.log('esto es name: ', name);
         const listsearch = await get03listsearch(name);
         if(listsearch.length && name){
             return res.status(200).json(listsearch.slice(0,14));
