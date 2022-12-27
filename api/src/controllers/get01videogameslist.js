@@ -1,10 +1,10 @@
+// nota: esto solo muestra la lista, nbo realiza la busqueda
 const { get01APIlist } = require("./get01APIvideogameslist");
 const { get01DBlist } = require("./get01DBvideogameslist");
-const { get03APIlistsearch} = require("./get03APIvideogameslistsearch");
 const get01videogameslist = async (nameS) =>{
-    const get03APIvideogameslistsearch = await get03APIlistsearch(nameS);
+    const get01APIvideogameslist = await get01APIlist();
     const get01DBvideogameslist = await get01DBlist();
-    const get01APIyDBall = get01DBvideogameslist.concat(get03APIvideogameslistsearch);
+    const get01APIyDBall = get01DBvideogameslist.concat(get01APIvideogameslist);
     return get01APIyDBall
   }
 
