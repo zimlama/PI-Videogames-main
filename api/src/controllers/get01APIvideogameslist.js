@@ -3,7 +3,8 @@ require("dotenv").config();
 const { API_KEY, API_URL } = process.env;
 
 const get01APIlist = async () => {
-    const apiWebINFO = await axios.get(`${API_URL}games?key=${API_KEY}&page_size=100`,{headers:{'Accept-Encoding':'identity'}},{ params: { limit: 100 }})
+    //const apiWebINFO = await axios.get(`${API_URL}games?key=${API_KEY}&page_size=100`,{headers:{'Accept-Encoding':'identity'}},{ params: { limit: 100 }})
+    const apiWebINFO = await axios.get(`${API_URL}games?key=${API_KEY}&page_size=100`,{headers:{'Accept-Encoding':'identity'}})
     .then((res) =>
         res.data.results.map((video) => {
             return {
