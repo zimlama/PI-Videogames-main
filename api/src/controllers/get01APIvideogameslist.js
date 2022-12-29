@@ -4,7 +4,7 @@ const { API_KEY, API_URL } = process.env;
 
 const get01APIlist = async () => {
     // debe ser asyncronico porque no sabes cuanto tarda la api en contestar
-    let apiInfo = [];
+    let apiWebINFO = [];
   
     const pageOne = await axios.get(`${API_URL}games?key=${API_KEY}&page=1`, {
       headers: { "Accept-Encoding": "identity" },
@@ -22,14 +22,14 @@ const get01APIlist = async () => {
       headers: { "Accept-Encoding": "identity" },
     });
   
-    apiInfo = pageOne.data.results.concat(
+    apiWebINFO = pageOne.data.results.concat(
       pageTwo.data.results,
       pageThree.data.results,
       pageFour.data.results,
       pageFive.data.results
     );
   
-    let apiInfoTotal = apiInfo.map((video) => {
+    let apiWebINFOTotal = apiWebINFO.map((video) => {
       return {
         id: video.id,
         name: video.name,
@@ -42,7 +42,7 @@ const get01APIlist = async () => {
       };
     });
   
-    return apiInfoTotal;
+    return apiWebINFOTotal;
   };
 
 // const get01APIlist = async () => {
