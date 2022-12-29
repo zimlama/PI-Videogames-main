@@ -7,7 +7,12 @@ const { get01DBlist } = require("./get01DBvideogameslist");
 
 const get02DBdetail = async (idShow) => {
     const videogameslist = await get01DBlist();
+    const regexExp = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
+    let uuidCheck = "" + idShow;
     if(Number.isInteger(Number(idShow))){
+        const videogameMatchName = await videogameslist.filter((el) => el.id.includes(idShow));
+        return videogameMatchName;
+    } else if(regexExp.test(uuidCheck)){
         const videogameMatchName = await videogameslist.filter((el) => el.id.includes(idShow));
         return videogameMatchName;
     } else {
