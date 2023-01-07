@@ -2,6 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 const { API_KEY, API_URL } = process.env;
 
+// vamos a tratar de subir
 const get01APIlist = async () => {
     // debe ser asyncronico porque no sabes cuanto tarda la api en contestar
     let apiWebINFO = [];
