@@ -112,7 +112,7 @@ function Home() {
     <ul>
       {
       currentVideogames.map((video) => {
-        console.log('esto es video.id: ', video.id);
+        //console.log('esto es video.id: ', video.id);
         return (
           <Link to={`/videogames/${video.id}`} >
             <Card

@@ -35,7 +35,7 @@ export function getVideogameById(id) {
     return async function (dispatch) {
       try {
         let detail = await axios.get(`http://localhost:3001/videogames/${id.id}`);
-        // console.log(detail.data)
+        console.log(id.id)
         return dispatch({
           type: "GET_VIDEOGAME_BYID",
           payload: detail.data,
@@ -50,16 +50,14 @@ export function getVideogameById(id) {
   };
 }
 
-/*export function clearDetails(){
+  
+  
+export function cleanDetails(){
   return {
       type: 'CLEAR_DETAILS' 
   }
-}*/
-export function cleanDetail(){
-  return{
-      type: 'CLEAN_DETAIL'
-  }
 }
+
 
 
 

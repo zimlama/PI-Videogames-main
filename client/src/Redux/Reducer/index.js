@@ -5,9 +5,11 @@ const initialState = {
   //videogameById: [],
   //videogamesByName: [],
   videogameCreate: null,
+  videogameDetail: [],
 };
 
 export default function rootReducer(state = initialState, action) {
+  
   switch (action.type) {
     case "GET_VIDEOGAMES":
       return {
@@ -26,7 +28,7 @@ export default function rootReducer(state = initialState, action) {
     case "GET_VIDEOGAME_BYID":
       return {
         ...state,
-        videogame: action.payload,
+        videogameDetail: action.payload,
       };
 
     case "GET_VIDEOGAMES_NAME":
@@ -146,6 +148,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         videogames: sortByRating,
       };
+    
+    case 'CLEAR_DETAILS':
+        return{
+          ...state,
+          videogameDetail: []
+        }
 
     default:
       return state;
