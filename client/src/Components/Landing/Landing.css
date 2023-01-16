@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(229, 229, 229);
+    font-family: 'AgencyFB', sans-serif;
+    font-size: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    justify-content: center;
+    background-size: cover;
+    display: flex;
+    background: no-repeat center/100% url("../images/backgroundLanding.jpeg");
+    background-repeat: no-repeat;    
+}
+
+.title {
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.button_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 2rem;
+    display: flex;
+    height: 12rem;
+    width: 12rem;
+    margin: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+
+    /* border: solid 1px black;
+    border-radius: 1rem; */
+  }
+
+.buttonSelect {
+    background: linear-gradient(to bottom left, #4c4c4c, rgba(255, 255, 255, 0.5));
+    border-radius: 15px;
+    display: inline-block;
+    height: 1.6em;
+            transform: rotate(-40deg);
+    width: 3.5em;
+    z-index: 30;
+    margin: 0.1rem;
+  }
+
+.buttonStart {
+    background: linear-gradient(to bottom left, #4c4c4c, rgba(255, 255, 255, 0.5));
+    border-radius: 15px;
+    display: inline-block;
+    height: 1.6em;
+            transform: rotate(-40deg);
+    width: 3.5em;
+    z-index: 30;
+}
+
+.buttonStart:hover{
+    transform: scale(1.1,1.1);
+}

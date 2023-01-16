@@ -3,9 +3,9 @@ require("dotenv").config();
 const { API_KEY, API_URL } = process.env;
 const { Videogame, Genre } = require('../db');
 
-// - [ ]  POST /videogames:
-//     - [ ]  Recibe los datos recolectados desde el formulario controlado de la ruta de creación de videojuego por body
-//     - [ ]  Crea un videojuego en la base de datos, relacionado a sus géneros.
+// - [x]  POST /videogames:
+//     - [x]  Recibe los datos recolectados desde el formulario controlado de la ruta de creación de videojuego por body
+//     - [x]  Crea un videojuego en la base de datos, relacionado a sus géneros.
 
 async function post01create(req, res, next){
     try{

@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
       allowNull: true
     },
     platforms: {
-      type: DataTypes.JSON, // ? ver si corresponde o NO correspoonde .ARRAY x que es un array de varias plataformas
+      type: DataTypes.JSON, // DataTypes.ARRAY(DataTypes.STRING),  (el origianl )
       allowNull: false
     },
     background_image: {

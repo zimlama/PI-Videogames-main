@@ -1,0 +1,189 @@
+.title_container_detail {
+    justify-content: center;
+    text-align: center;
+    margin-top: 6rem;
+
+}
+
+.title_detail {
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: none;
+    margin-left: 1rem;
+    text-decoration: underline goldenrod;
+    
+}
+
+.button_container_detail {
+    margin-top: 3rem;
+    margin-left: -1rem;
+    justify-content: center; 
+    text-align: center;
+    
+}
+.button_detail {
+    text-decoration: none;
+    color:goldenrod;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: lighter;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}
+
+
+.image_detail {
+    justify-content: center;
+    margin-left: 2rem;
+    width: 400px;
+    height:300px;
+}
+
+.released_detail {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: rgb(7, 202, 7);
+}
+
+.platforms_detail {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: rgb(7, 202, 7);
+}    
+    
+
+.genres_detail {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: rgb(7, 202, 7);
+}
+
+.rating_detail {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: rgb(7, 202, 7);
+}
+
+.description_detail {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: rgb(7, 202, 7);
+    padding-left: 19%;
+    padding-right: 19%;
+}
+
+/* desde aca*/
+
+.contPri {
+    /* background-image: url('../images/patronus-charm-harry-potter-and-fantastic-beasts-jo.jpg'); */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.conTotal {
+    display: flex;
+    margin: 2% 8% 0 8%;
+}
+
+.infoGame {
+    align-items: flex-end;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    background-color: rgba(8,30,48,0.8);
+    box-shadow: 5px 1px 20px white;
+}
+
+.infoGame img {
+    width: 500px;
+    height: 350px;
+    border-radius: 28px;
+}
+
+.infoRest {
+    margin-top: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+}
+
+.imgDesc h1 {
+    font-size: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    text-shadow: 3px 1px 0px white;
+}
+
+.imgDesc p {
+    max-width: 80%;
+    font-family: 'Roboto Concensed', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(87, 120, 153, 0.8);
+    box-shadow: 5px 5px 20px white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: justify;
+    color: white;
+}
+
+.buttonBack {
+    background: linear-gradient(-45deg, #3f00b5, #9f69fe, #27c8b7, #3f00b5);
+    background-size: 800% 400%;
+    padding: 1em 2em;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+}
+   
+.buttonBack:hover {
+    animation: gradient 3s infinite;
+    transform: scale(1.05);
+}
+   
+.buttonBack:active {
+    animation: gradient 3s infinite;
+    transform: scale(0.8);
+}
+   
+@keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+}
+
+.linkBack {
+    text-decoration: none;
+    color: white;
+}
+
+.loadkra {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}

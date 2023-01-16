@@ -13,12 +13,11 @@ async function get03list(req, res, next){
         // Init  -> Get info DB
         const getDBlist = await Genre.findAll();
         const get01DBlist = [];
-        await getDBlist.map(el => {
+        getDBlist.map(el => {
             get01DBlist.unshift(
-                {
-                    id: el.dataValues.id,
-                    name: el.dataValues.name,
-            });
+        
+                    el.dataValues.name,
+            );
         });
         if(get01DBlist.length){
             return res.status(200).json(get01DBlist);

@@ -1,0 +1,22 @@
+.main {
+    justify-content: center;
+    display: flex;
+}
+  
+.button_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 2rem;
+    display: flex;
+    height: 12rem;
+    width: 12rem;
+    margin: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+  
+    /* border: solid 1px black;
+    border-radius: 1rem; */
+}
+  
+  
