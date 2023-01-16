@@ -25,7 +25,10 @@ async function post01create(req, res, next){
         };
         let videogameCreated = await Videogame.create({
             name,
-            slug,
+            slug: name
+                .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "")
+                .replace(/ /g, "-")
+                .toLowerCase(),
             description,
             released,
             rating,

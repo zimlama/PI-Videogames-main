@@ -25,6 +25,7 @@ async function get02detail(req, res, next){
         background_image: apiWebINFO.data.background_image,
         genre: apiWebINFO.data.genres.map(el => el.name)
       });
+      console.log('esto es getAPIdetail: ', getAPIdetail);
       return res.status(200).json(getAPIdetail);
     }
     // End -> Videogame Detail API
