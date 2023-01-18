@@ -81,6 +81,7 @@ async function get01listsearch(req, res, next){
                     platforms: el.dataValues.platforms.map((elp) => elp.name),
                     background_image: el.dataValues.background_image,
                     genre: el.dataValues.genres.map((eln) => eln.name),
+                    createdInDb: el.dataValues.createdInDb,
             });
         });
         // End  -> Get info DB

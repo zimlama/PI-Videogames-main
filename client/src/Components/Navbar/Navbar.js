@@ -11,7 +11,7 @@ export default function Navbar({
   handleSort,
 }) {
   const allGenre = useSelector((state) => state.genres);
-  console.log(allGenre);
+  //console.log(allGenre);
   return (
     <div>
       <Link to="/">
@@ -46,13 +46,15 @@ export default function Navbar({
           <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option>Sort by Genres</option>
             <option value="All">All</option>
-{
-            allGenre.map((g, i) =>{
-                return (
-              <option key={i}>
-                {g}
-              </option>
-            )})}
+                {
+                    allGenre.map((g) =>{
+                        return (
+                            <option value={g} >
+                                {g}
+                            </option>
+                        )
+                    })
+                }
           </select>
         </div>
       </div>

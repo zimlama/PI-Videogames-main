@@ -21,7 +21,6 @@ export default function rootReducer(state = initialState, action) {
     case "GET_GENRES":
       return {
         ...state,
-
         genres: action.payload,
       };
 
@@ -50,41 +49,18 @@ export default function rootReducer(state = initialState, action) {
       };
 
     case "FILTER_BYGENRE":
-      const allGames = state.allVideogames; // en este caso para que el filtro arranque de todos
-      /*const genresFilter = allGames.filter((e) => {
-        if (e.genre) {
-          const genres = e.genre;
-          return genres.includes(action.payload);
-        }
-      });
-      return {
-        ...state,
-        videogames: action.payload === "All" ? allGames : genresFilter,
-      };*/
+      console.log(action.payload)
+      const allGames = state.allVideogames;
 
-      // const allVideogames = state.allVideogames
       const genresFilter =
-        action.payload === "All"
-          ? allGames
-          : allGames.filter((el) =>
-              el.genre?.some((e) => e.includes(action.payload))
+          allGames.filter((el) =>
+              el.genre?.includes(action.payload)
             );
-      console.log(genresFilter);
       return {
         ...state,
         videogames: genresFilter,
       };
 
-    /*const genresFilter =
-        action.payload === "All"
-          ? state.allVideogames
-          : allGames.filter((el) => {
-            /*  return el.genres.find((el) => { //aca retornaria solo el primero
-                return el.name === action.payload;*/
-    //      return el.genres === action.payload;
-    //    });
-
-    // return { ...state, videogames: genresFilter };
 
     case "FILTER_VIDEOGAME_CREATED_IN":
       const filterCreatedIn =
@@ -93,8 +69,7 @@ export default function rootReducer(state = initialState, action) {
           : state.allVideogames.filter((el) => !el.createdInDb);
       return {
         ...state,
-        videogames:
-          action.payload === "All" ? state.allVideogames : filterCreatedIn,
+        videogames: filterCreatedIn,
       };
 
     case "ORDER_BY_NAME":

@@ -35,7 +35,7 @@ export function getVideogameById(id) {
     return async function (dispatch) {
       try {
         let detail = await axios.get(`http://localhost:3001/videogames/${id.id}`);
-        console.log(id.id)
+        //console.log(id.id)
         return dispatch({
           type: "GET_VIDEOGAME_BYID",
           payload: detail.data,
@@ -85,15 +85,6 @@ export function videogameCreate(payload) {
       "http://localhost:3001/videogames",
       payload
     );
-    
-    // .then((r) => {
-    //  dispatch({ type: "VIDEOGAME_CREATE", payload: r.data });
-    // });
-    //r.status === 200 && alert("Videogame created!")
-    //.catch((e) => alert("Error on creating Videogame"));
-    // } catch (error) {
-    //   alert("Error on creating Videogame");
-    // }
     return response;
   };
 }
@@ -101,16 +92,17 @@ export function videogameCreate(payload) {
 export function filterGamesByGenre(payload) {
   //el payload es el value del input
   return {
-    type: "FILTER_VIDEOGAME_GENRE",
+    type: "FILTER_BYGENRE",
     payload,
   };
 }
 
-export function filterCreatedIn(payload) {
+export function filterCreatedIn(str) {
   //debe solicitar api o db
+  console.log('esto es str', str);
   return {
     type: "FILTER_VIDEOGAME_CREATED_IN",
-    payload,
+    payload: str,
   };
 }
 

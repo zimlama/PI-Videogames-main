@@ -1,6 +1,7 @@
 import React from "react";
+import "./Paging.css"
 
-export default function Paging({ videogamesPerPage, allVideogames, page }) {
+export default function Paging({ videogamesPerPage, allVideogames, page, currentPage }) {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(allVideogames / videogamesPerPage); i++) {
     pageNumbers.push(i);
@@ -8,11 +9,11 @@ export default function Paging({ videogamesPerPage, allVideogames, page }) {
 
   return (
     <div className="paging100">
-      <ul>
         {pageNumbers.map((number) => {
-          return <button onClick={() => page(number)}>{number}</button>;
+          return (
+            <button className={number === currentPage && 'active'} onClick={() => page(number)}>{number}</button>
+          )
         })}
-      </ul>
     </div>
   );
 };

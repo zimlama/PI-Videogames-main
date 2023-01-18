@@ -21,3 +21,7 @@ body {
     /* border: solid 1px black;
     border-radius: 1rem; */
 }
+
+.active {
+    color: red;
+}

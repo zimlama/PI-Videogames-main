@@ -9,7 +9,7 @@ import {
   getGenres,
   getVideogameByName,
   getVideogameById,
-  videogameCreate,
+  VideogameCreate,
   filterGamesByGenre,
   filterCreatedIn,
   orderByName,
@@ -87,7 +87,7 @@ function Home() {
     <div>
       <div >
         <div>
-          <Link to="/videogameCreate">
+          <Link to="/VideogameCreate">
             CREATE VIDEOGAME
           </Link>
         <div>
@@ -112,7 +112,6 @@ function Home() {
     <ul>
       {
       currentVideogames.map((video) => {
-        //console.log('esto es video.id: ', video.id);
         return (
           <Link to={`/videogames/${video.id}`} >
             <Card
@@ -122,21 +121,9 @@ function Home() {
               description={video.description}
               released={video.released}
               rating={video.rating}
-              platforms={
-                video.platforms.length === 0 ? (
-                  <div>No Platform Available</div>
-                ) : (
-                  video.platforms.map((el) => el.name)
-                )
-              }
+              platforms={video.platforms}
               background_image={video.background_image}
-              genre={
-                video.genre.length === 0 ? (
-                  <div>No Genre Available</div>
-                ) : (
-                  video.genre.map((genre) => genre.name)
-                )
-              }
+              genre={video.genre}
             />
           </Link>
         );
@@ -144,10 +131,11 @@ function Home() {
     </ul>
       <div className="pagination">
         <Paging
-          allVideogames={allVideogames.length} //porque necesito la cantidad
+          currentPage={currentPage}
+          allVideogames={allVideogames.length}
           videogamesPerPage={videogamesPerPage}
           page={page}
-          currentPage={currentPage}
+          
         />
       </div>
       
