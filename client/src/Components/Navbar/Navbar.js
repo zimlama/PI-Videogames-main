@@ -11,7 +11,6 @@ export default function Navbar({
   handleSort,
 }) {
   const allGenre = useSelector((state) => state.genres);
-  //console.log(allGenre);
   return (
     <div>
       <Link to="/">

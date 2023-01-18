@@ -2,8 +2,6 @@ const initialState = {
   videogames: [],
   allVideogames: [],
   genres: [],
-  //videogameById: [],
-  //videogamesByName: [],
   videogameCreate: null,
   videogameDetail: [],
 };
@@ -15,7 +13,7 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: action.payload,
-        allVideogames: action.payload, //supuestamente esto hace que los filtros empiecen sobre todos los juegos y no sobre los filtros aplicados
+        allVideogames: action.payload,
       };
 
     case "GET_GENRES":
@@ -39,10 +37,9 @@ export default function rootReducer(state = initialState, action) {
     case "VIDEOGAME_CREATE":
       return {
         ...state,
-        //videogameCreate: action.json, //action.payload,
       };
 
-    case "RESET": //VER SI CORRESPONDE
+    case "RESET":
       return {
         ...state,
         videogames: [],

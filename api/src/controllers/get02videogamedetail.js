@@ -23,7 +23,8 @@ async function get02detail(req, res, next){
         rating: apiWebINFO.data.rating,
         description: apiWebINFO.data.description,
         background_image: apiWebINFO.data.background_image,
-        genre: apiWebINFO.data.genres.map(el => el.name)
+        genre: apiWebINFO.data.genres.map(el => el.name),
+        platforms: apiWebINFO.data.platforms.map(el => el)
       });
       console.log('esto es getAPIdetail: ', getAPIdetail);
       return res.status(200).json(getAPIdetail);
@@ -55,6 +56,7 @@ async function get02detail(req, res, next){
           platforms: el.dataValues.platforms.map((elp) => elp.name),
           background_image: el.dataValues.background_image,
           genre: el.dataValues.genres.map((eln) => eln.name),
+          platforms: el.dataValues.platforms.map(el => el)
         });
       });
       const videogameMatchName = await get02DBdetail.filter((el) => el.id.includes(uuidCheck));

@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link} from "react-router-dom";
 import { videogameCreate, getGenres } from "../../Redux/Actions/index";
-//import "./VideogameCreate.css";
+
 
 
 function validation(input) {
   let errors = {};
   if (!input.name.trim()) {
-    //trim elimina espacios en blanco que dejen cuando escriben
     errors.name = "Please write a name!";
   }
   if (!input.description.trim()) {
@@ -33,7 +32,6 @@ function VideogameCreate() {
     background_image: "",
     genre: [],
   });
-  console.log(genre);
 
   const platformsList = [
     "PC",
@@ -64,8 +62,6 @@ function VideogameCreate() {
         [e.target.name]: e.target.value,
       });
     } else {
-      // name es cada casillero que debe llenar
-      // el value son los inputs de arriba que van a ir cambiando a medida que se ingresa la info
       setErrors(
         validation({
           ...input,
@@ -98,7 +94,6 @@ function VideogameCreate() {
     genre: input.genre,
     platforms: input.platforms,
   };
-  console.log("este es el :", obj);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -113,10 +108,7 @@ function VideogameCreate() {
     if (Object.keys(errors).length === 0) {
       dispatch(videogameCreate(obj));
       alert("Videogame created 👌");
-      //e.target.reset();
-
       setInput({
-        //seteo todo mi input en cero
         name: "",
         description: "",
         released: "",
@@ -134,7 +126,7 @@ function VideogameCreate() {
   function handleDeleteGenre(e) {
     setInput({
       ...input,
-      genre: input.genre.filter((g) => g !== e), //filtro por todo lo que no sea ese elemento
+      genre: input.genre.filter((g) => g !== e),
     });
   }
 
@@ -207,20 +199,6 @@ function VideogameCreate() {
             ))}
           </select>
         </div>
-            {/*{platformsList.map((p) => (
-              <div key={p}>
-                <input
-                  className="platforms_input"
-                  type="checkbox"
-                  value={p}
-                  name="platforms"
-                  onChange={(e) => handleSelectPlatforms(e)}
-                ></input>
-                <label name={p}>{p}</label>
-              </div>
-            ))}*/}
-        
-        
           <input
             className="inputsss"
             placeholder="Image"

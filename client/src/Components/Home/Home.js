@@ -21,10 +21,10 @@ import Navbar from "../Navbar/Navbar";
 function Home() {
   const dispatch = useDispatch();
 
-  const allVideogames = useSelector((store) => store.videogames); //trae todo lo que esta en el estado
-  const [videogamesPerPage, setVideogamesPerPage] = useState(15); //cantidad de videos x pagina
+  const allVideogames = useSelector((store) => store.videogames);
+  const [videogamesPerPage, setVideogamesPerPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(1);
-  const [order, setOrder] = useState(""); //estado local de asc y desc que arranca vacio
+  const [order, setOrder] = useState("");
 
   const indexOfLastVideogame = currentPage * videogamesPerPage;
   const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;

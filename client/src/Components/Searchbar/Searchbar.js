@@ -20,7 +20,7 @@ export default function SearchBar (){
         if(!name.length){
             alert('Please enter a videogame');
         } else {
-            dispatch(getVideogameByName(name));//name es lo q está escribiendo el usuario
+            dispatch(getVideogameByName(name));
             setName('');
         }
     };
